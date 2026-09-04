@@ -1,8 +1,12 @@
 package board
 
+// BitBoard is a 64-bit integer where each bit represents a square on the chessboard.
 type BitBoard uint64
+
+// square represents a specific square on the chessboard, numbered from 0 (A1) to 63 (H8).
 type square uint
 
+// The constants A1 to H8 represent the squares on the chessboard, starting from the bottom-left (A1) to the top-right (H8).
 const (
 	A1 square = iota
 	B1

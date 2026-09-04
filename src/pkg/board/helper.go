@@ -2,6 +2,7 @@ package board
 
 import "fmt"
 
+// Print displays the BitBoard in a human-readable 8x8 grid format, with ranks and files labeled.
 func Print(board BitBoard) {
 	for rank := 7; rank >= 0; rank-- {
 		fmt.Printf("%d ", rank+1)

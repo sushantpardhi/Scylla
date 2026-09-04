@@ -1,20 +1,22 @@
 package board
 
+// Position represents the state of a chess game, with separate BitBoards for each piece type and color.
 type Position struct {
-	WP BitBoard
-	WN BitBoard
-	WB BitBoard
-	WR BitBoard
-	WQ BitBoard
-	WK BitBoard
-	BP BitBoard
-	BN BitBoard
-	BB BitBoard
-	BR BitBoard
-	BQ BitBoard
-	BK BitBoard
+	WP BitBoard // White Pawn
+	WN BitBoard // White Knight
+	WB BitBoard // White Bishop
+	WR BitBoard // White Rook
+	WQ BitBoard // White Queen
+	WK BitBoard // White King
+	BP BitBoard // Black Pawn
+	BN BitBoard // Black Knight
+	BB BitBoard // Black Bishop
+	BR BitBoard // Black Rook
+	BQ BitBoard // Black Queen
+	BK BitBoard // Black King
 }
 
+// NewGame initializes a Position with the standard starting setup for a chess game.
 func NewGame() Position {
 	return Position{
 		WP: BitAt(A2) | BitAt(B2) | BitAt(C2) | BitAt(D2) | BitAt(E2) | BitAt(F2) | BitAt(G2) | BitAt(H2),
@@ -32,10 +34,12 @@ func NewGame() Position {
 	}
 }
 
+// WhitePieces returns a BitBoard representing all white pieces on the board.
 func (position Position) WhitePieces() BitBoard {
 	return position.WP | position.WN | position.WB | position.WR | position.WQ | position.WK
 }
 
+// BlackPieces returns a BitBoard representing all black pieces on the board.
 func (position Position) BlackPieces() BitBoard {
 	return position.BP | position.BN | position.BB | position.BR | position.BQ | position.BK
 }
