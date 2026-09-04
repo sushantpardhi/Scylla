@@ -1,2 +1,22 @@
-.DS_Store
+# Memory
 .codebase-memory/
+
+# Build
+/bin/
+/build/
+*.exe
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Test/coverage
+coverage.out
+*.prof
+
+# Temporary
+*.tmp
+*.log
